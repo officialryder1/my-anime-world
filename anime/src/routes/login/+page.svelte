@@ -2,15 +2,22 @@
     import Button from "$lib/component/button.svelte"
     import Login from "$lib/component/login.svelte";
     
-    let email = ''
-    let password = ''
-
+    export let form;
+    $: console.log(form?.error)
     
 </script>
-
+<svelte:head>
+  <title>Login</title>
+</svelte:head>
 <main>
     <h1>Login</h1>
-    <Login/>
+
+    {#if form?.error}
+      <div class="notice error">
+        {form.error}
+      </div>
+    {/if}
+    <Login />
     <small>Don't have an account? <a href="/register">Register here</a></small>
 </main>
 <style>

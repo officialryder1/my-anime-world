@@ -1,11 +1,19 @@
 <script>
-    import Button from "$lib/component/button.svelte"
     import Register from "$lib/component/register.svelte";
     
+    export let form;
+    $: console.log(form?.error)
 </script>
-
+<svelte:head>
+<title>Register</title>
+</svelte:head>
 <main>
     <h1>Register</h1>
+    {#if form?.error}
+        <div class="error">
+            {form.error}
+        </div>
+    {/if}
     <Register/>
     <small>Already have an account? <a href="/login">login </a></small>
 </main>
@@ -39,5 +47,16 @@
     a:hover{
         text-decoration: underline;
         
+    }
+    .error{
+        font-weight: 100;
+        font-size: 12x;
+        background-color: #e85673;
+        text-align: center;
+        width: 100%;
+        height: 30px;
+        padding: 5px;
+        color: #fff;
+        padding-top: 3%;
     }
 </style>

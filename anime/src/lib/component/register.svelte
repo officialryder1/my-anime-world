@@ -1,24 +1,30 @@
 <script>
    import Button from "$lib/component/button.svelte"
+   import { enhance } from '$app/forms'
+
+
+
 </script>
 
-<form>
-    <div class="form-field" >
+<form method="post" use:enhance>
+
+    
+    <!-- <div class="form-field" >
         <label for="question">Username</label>
         <input type="text" id="question">
         <div>
             <p class="error"></p>
         </div>
-    </div>
+    </div> -->
     <div class="form-field">
         <label for="answer-a">Email</label>
-        <input type="email" id="answer-a">
+        <input type="email" id="answer-a" name="email">
         <div><p></p>
         </div>
     </div>
     <div class="form-field">
         <label for="answer-b">Password</label>
-        <input type="password" id="answer-b">
+        <input type="password" id="answer-b" name="password">
         <div>
             <p class="error"></p>
         </div>
