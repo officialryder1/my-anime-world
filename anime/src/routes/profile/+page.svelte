@@ -1,6 +1,7 @@
 <script>
     export let data
     $:console.log(data.user.email)
+   
 </script>
 
 <svelte:head>

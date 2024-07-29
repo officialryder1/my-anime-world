@@ -5,9 +5,8 @@
         <a href="/login"><li class="active">login</li></a>
         <a href="/register"><li>register</li></a>
         <a href="/profile"><li>profile</li></a>
-        <a href="/api/logout" class="btn">logout</a>
-    </ul>
 </div>
+
 
 <style>
     .active{
@@ -32,7 +31,7 @@
         color: #555;
         cursor: pointer;
     }
-    .btn{
+    /* .btn{
         max-height: 40px;
         width: 70px;
         border: 1px solid #d91b42;
@@ -45,5 +44,5 @@
     }
     .btn:hover{
         text-decoration: none;
-    }
+    } */
 </style>

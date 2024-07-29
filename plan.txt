@@ -1,0 +1,6 @@
+Plan for My anime platform
+
+1. Get api that has all the anime - done
+2. pagination
+3. Then Rate then according to best
+4. and latest best per day
