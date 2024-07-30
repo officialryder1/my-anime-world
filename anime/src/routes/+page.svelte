@@ -1,6 +1,16 @@
 <script>
     import Card from "../lib/component/card.svelte";
+    import Search from "../lib/component/search.svelte";
+    import { onMount } from "svelte";
+    import { animeDataStore } from "../lib/component/store/search";
+
     export let data;
+    
+    onMount(() => {
+        animeDataStore.set(data?.anime.data)
+    })
+    
+
 
     $: animes = data?.anime.data;
     $: pagination = data?.pagination;
@@ -20,6 +30,11 @@
             window.location.href = `?page=${pagination.current_page - 1}`;
         }
     }
+
+    // const searchAnime = animes.map((anime) => ({
+    //     ...anime,
+    //     searchTerms: `${anime.title, anime.synopsis, anime.genre}`
+    // }))
 </script>
 
 <svelte:head>
@@ -27,6 +42,7 @@
 </svelte:head>
 
 <main>
+    <Search/>
     {#if animes}
         <div class="pagination">
             <button on:click={handlePreviousPage} disabled={pagination.current_page === 1}>Previous</button>
